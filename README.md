@@ -1,6 +1,7 @@
 # Apex store
 
-## Table of contents
+<details>
+ <summary><strong>Table of Contents</strong> (click to expand)</summary>
 
 - [Overview](#overview)
   - [Technologies used](#technologies-used)
@@ -10,6 +11,8 @@
 - [Directory structure](#directory-structure)
 - [Collaboration](#collaboration)
 - [Contact me](#contact-me)
+
+</details>
 
 ## Overview
 
@@ -24,10 +27,16 @@ Live preview: [Link](https://apex.darshanvaishya.xyz/)
 - HTML
 - SASS
 - ReactJS
+- React-router
 
 ## Challenges faced
 
+Routing
+
 ## Learning outcomes
+
+React
+Routing
 
 ## Screenshots
 
