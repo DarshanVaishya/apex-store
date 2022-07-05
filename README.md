@@ -1,7 +1,5 @@
 # Apex store
 
-An e-commerce clothing store created using Reactjs.
-
 ## Table of contents
 
 - [Overview](#overview)
@@ -15,11 +13,17 @@ An e-commerce clothing store created using Reactjs.
 
 ## Overview
 
+An e-commerce clothing store created using Reactjs.
+
+Live preview: [Link](https://apex.darshanvaishya.xyz/)
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/59a952a2-40e9-4842-8458-ac934f112569/deploy-status)](https://app.netlify.com/sites/exquisite-marzipan-ac09ca/deploys)
+
 ### Technologies used
 
-HTML
-SASS
-ReactJS
+- HTML
+- SASS
+- ReactJS
 
 ## Challenges faced
 
