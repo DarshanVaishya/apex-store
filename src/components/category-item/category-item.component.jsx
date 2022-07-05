@@ -5,15 +5,14 @@ function CategoryItem({ category }) {
 
 	return (
 		<div className="category-container">
-			<div
-				className="background-image"
-				style={{
-					backgroundImage: `url(${imageUrl})`,
-				}}
+			<img
+				className="category-container-img"
+				src={imageUrl}
+				alt={`Category of ${title}`}
 			/>
 			<div className="category-body-container">
 				<h2>{title}</h2>
-				<p>Shop now</p>
+				<p className="cta">Shop now</p>
 			</div>
 		</div>
 	);
