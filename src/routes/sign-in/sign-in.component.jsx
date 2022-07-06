@@ -7,8 +7,6 @@ import {
 function SignIn() {
 	const logGoogleUser = async () => {
 		const response = await signInWithGooglePopup();
-		console.log("RESPONSE", response);
-
 		createUserDocumentFromAuth(response.user);
 	};
 

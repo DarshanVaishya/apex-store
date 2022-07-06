@@ -12,41 +12,41 @@ const firebaseConfig = {
 	appId: "1:407675975299:web:80ff16de9b10ef42150db6",
 };
 
-// Create a new provider to access our firebase auth
-const provider = new GoogleAuthProvider();
-// Set what to show when provider appears
-provider.setCustomParameters({
-	prompt: "select_account",
-});
-
-//////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
 // FIREBASE CONFIG
-//////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
 // Connect this web app with the firebase cloud using the config
 const firebaseApp = initializeApp(firebaseConfig);
 // get the authentication object
 export const auth = getAuth();
+// Create a new authentication provider to access our firebase auth
+const provider = new GoogleAuthProvider();
+// Set what to show when the authenticator appears
+provider.setCustomParameters({
+	prompt: "select_account",
+});
 // Create a popup method which will use the auth and provider
 export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
 
-//////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
 // FIRESTORE CONFIG
-//////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
 // Get reference to out database (firestore) on firebase
 export const db = getFirestore(firebaseApp);
 
+///////////////////////////////////////////////////////////////////////////////////////////
+// FIRESTORE METHODS
+///////////////////////////////////////////////////////////////////////////////////////////
 export const createUserDocumentFromAuth = async (userAuth) => {
 	// Get reference to given uid document from 'users' collections from our firestore db
 	const userDocRef = doc(db, "users", userAuth.uid);
-	console.log("DOCUMENT", userDocRef);
 
-	// Get the snapshot of that document
-	const userSnapshot = await getDoc(userDocRef);
-	console.log("SNAPSHOT", userSnapshot);
-	console.log(userSnapshot.exists());
-	const doesExist = userSnapshot.exists();
+	// Get the documet using the reference
+	const userDoc = await getDoc(userDocRef);
+	// Check whether given document exists in the collection
+	const doesExist = userDoc.exists();
 
-	// if data doesnt exist, set the new document
+	// if document doesnt exist, set the new document
 	if (!doesExist) {
 		const { displayName, email } = userAuth;
 		const createdAt = new Date();
@@ -65,6 +65,5 @@ export const createUserDocumentFromAuth = async (userAuth) => {
 		}
 	}
 
-	// TODO: Why return doc ref???
 	return userDocRef;
 };
