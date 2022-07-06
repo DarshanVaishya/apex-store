@@ -28,6 +28,9 @@ Live preview: [Link](https://apex.darshanvaishya.xyz/)
 - SASS
 - ReactJS
 - React-router
+- Firebase
+- Firestore
+- Google authentication
 
 ## Challenges faced
 
