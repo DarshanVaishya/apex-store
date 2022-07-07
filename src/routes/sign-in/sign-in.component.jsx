@@ -6,14 +6,14 @@ import {
 
 function SignIn() {
 	const logGoogleUser = async () => {
-		const response = await signInWithGooglePopup();
-		createUserDocumentFromAuth(response.user);
+		const cred = await signInWithGooglePopup();
+		await createUserDocumentFromAuth(cred.user);
 	};
 
 	return (
 		<div>
 			<h1>Sign in page</h1>
-			<button onClick={logGoogleUser}>Sign in withgoogle popup</button>
+			<button onClick={logGoogleUser}>Sign in with google popup</button>
 		</div>
 	);
 }
