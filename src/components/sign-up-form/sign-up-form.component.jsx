@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
 	createUserAuthFromEmail,
 	createUserDocumentFromAuth,
 } from "../../utils/firebase/firebase.utils";
+import Button from "../button/button.component";
+import FormInput from "../form-input/form-input.component";
+import "./sign-up.-form.styles.scss";
 
 function SignUpForm() {
 	const defaultFormFields = {
@@ -46,50 +49,47 @@ function SignUpForm() {
 			console.error(err.message);
 		}
 	};
+	console.log(formFields);
 
 	return (
-		<div>
-			<h2>Don't have an account? Sign up!</h2>
+		<section className="sign-up-container">
+			<h2>Don't have an account?</h2>
+			<span>Sign up with your email and password</span>
 			<form onSubmit={handleSubmit}>
-				<label htmlFor="displayName">Display name</label>
-				<input
-					type="text"
+				<FormInput
 					id="displayName"
 					value={displayName}
 					onChange={handleChange}
-					required
+					label="Display name"
 				/>
 
-				<label htmlFor="email">Email</label>
-				<input
+				<FormInput
 					type="email"
 					id="email"
 					value={email}
 					onChange={handleChange}
-					required
+					label="Email"
 				/>
 
-				<label htmlFor="password">Password</label>
-				<input
+				<FormInput
 					type="password"
 					id="password"
 					value={password}
 					onChange={handleChange}
-					required
+					label="Password"
 				/>
 
-				<label htmlFor="confirmPassword">Confirm password</label>
-				<input
+				<FormInput
 					type="password"
 					id="confirmPassword"
 					value={confirmPassword}
 					onChange={handleChange}
-					required
+					label="Confirm password"
 				/>
 
-				<button type="submit">Sign up</button>
+				<Button type="submit">Sign up</Button>
 			</form>
-		</div>
+		</section>
 	);
 }
 

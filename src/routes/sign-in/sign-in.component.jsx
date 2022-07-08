@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../../components/button/button.component";
 import SignUpForm from "../../components/sign-up-form/sign-up-form.component";
 import {
 	createUserDocumentFromAuth,
@@ -14,7 +15,9 @@ function SignIn() {
 	return (
 		<div>
 			<h1>Sign in page</h1>
-			<button onClick={logGoogleUser}>Sign in with google popup</button>
+			<Button buttonType="google" onClick={logGoogleUser}>
+				Sign up with Google
+			</Button>
 			<SignUpForm />
 		</div>
 	);
