@@ -54,7 +54,7 @@ function SignUpForm() {
 	return (
 		<section className="sign-up-container">
 			<h2>Don't have an account?</h2>
-			<span>Sign up with your email and password</span>
+			<p>Sign up with your email and password</p>
 			<form onSubmit={handleSubmit}>
 				<FormInput
 					id="displayName"

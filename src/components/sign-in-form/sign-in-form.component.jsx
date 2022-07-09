@@ -26,7 +26,7 @@ function SignInForm({ handleGoogle }) {
 			<h2>I already have an account</h2>
 			<GoogleButton onClick={handleGoogle}>Sign in with Google</GoogleButton>
 			<DividerText>OR</DividerText>
-			<span>Sign in with your email and password</span>
+			<p>Sign in with your email and password</p>
 			<FormInput
 				type="email"
 				id="email"
