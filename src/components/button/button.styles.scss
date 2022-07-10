@@ -22,14 +22,15 @@
 	}
 
 	&:active {
-		transform: translateY(2px);
+		transform: translateY(1px) scale(0.95);
 		box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.2);
 	}
 
 	&.google-sign-in {
 		padding: 2px;
 		justify-content: space-between;
-		min-width: 210px;
+		align-items: stretch;
+		gap: 10px;
 		font-weight: bold;
 		background-color: #4285f4;
 

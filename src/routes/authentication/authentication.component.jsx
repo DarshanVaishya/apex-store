@@ -5,9 +5,9 @@ import {
 	createUserDocumentFromAuth,
 	signInWithGooglePopup,
 } from "../../utils/firebase/firebase.utils";
-import "./sign-in.styles.scss";
+import "./authentication.styles.scss";
 
-function SignIn() {
+function Authentication() {
 	const logGoogleUser = async () => {
 		const cred = await signInWithGooglePopup();
 		await createUserDocumentFromAuth(cred.user);
@@ -21,4 +21,4 @@ function SignIn() {
 	);
 }
 
-export default SignIn;
+export default Authentication;

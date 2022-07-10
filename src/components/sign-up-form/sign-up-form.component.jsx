@@ -49,7 +49,6 @@ function SignUpForm() {
 			console.error(err.message);
 		}
 	};
-	console.log(formFields);
 
 	return (
 		<section className="sign-up-container">
