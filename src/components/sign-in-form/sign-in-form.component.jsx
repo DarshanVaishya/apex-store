@@ -4,7 +4,6 @@ import Button from "../button/button.component";
 import DividerText from "../divider-text/divider-text.component";
 import FormInput from "../form-input/form-input.component";
 import GoogleButton from "../google-button/google-button.component";
-import "./sign-in-form.styles.scss";
 
 function SignInForm({ handleGoogle }) {
 	const defaultFormFields = {
@@ -29,14 +28,21 @@ function SignInForm({ handleGoogle }) {
 			const cred = await signInUserWithEmail(email, password);
 			console.log(cred);
 		} catch (err) {
-			// auth/wrong-password
-			// auth/user-not-found
-			console.error(err.message);
+			switch (err.code) {
+				case "auth/wrong-password":
+					alert("Incorrect password.");
+					break;
+				case "auth/user-not-found":
+					alert("No user associated with this email.");
+					break;
+				default:
+					console.error(err.message);
+			}
 		}
 	};
 
 	return (
-		<section className="sign-in-container">
+		<section className="form-container">
 			<h2>I already have an account</h2>
 			<GoogleButton onClick={handleGoogle}>Sign in with Google</GoogleButton>
 			<DividerText>OR</DividerText>

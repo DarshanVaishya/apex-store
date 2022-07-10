@@ -14,7 +14,7 @@ function Authentication() {
 	};
 
 	return (
-		<div className="sign-in-page">
+		<div className="authentication-container">
 			<SignInForm handleGoogle={logGoogleUser} />
 			<SignUpForm />
 		</div>
