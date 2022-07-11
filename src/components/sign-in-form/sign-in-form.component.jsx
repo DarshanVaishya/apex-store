@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useContext } from "react";
+import { userContext } from "../../contexts/user.context";
 import { signInUserWithEmail } from "../../utils/firebase/firebase.utils";
 import Button from "../button/button.component";
 import DividerText from "../divider-text/divider-text.component";
@@ -12,6 +14,11 @@ function SignInForm({ handleGoogle }) {
 	};
 	const [formFields, setFormFields] = useState(defaultFormFields);
 	const { email, password } = formFields;
+	const { setCurrentUser } = useContext(userContext);
+
+	const resetFormFields = () => {
+		setFormFields(defaultFormFields);
+	};
 
 	const handleChange = (e) => {
 		const { id, value } = e.target;
@@ -25,8 +32,9 @@ function SignInForm({ handleGoogle }) {
 		e.preventDefault();
 
 		try {
-			const cred = await signInUserWithEmail(email, password);
-			console.log(cred);
+			const { user } = await signInUserWithEmail(email, password);
+			setCurrentUser(user);
+			resetFormFields();
 		} catch (err) {
 			switch (err.code) {
 				case "auth/wrong-password":

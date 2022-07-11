@@ -1,8 +1,12 @@
+import { useContext } from "react";
 import { Link, Outlet } from "react-router-dom";
 import logo from "../../assets/logo.svg";
+import { userContext } from "../../contexts/user.context";
 import "./navigation.styles.scss";
 
 function Navigation() {
+	const { currentUser, setCurrentUser } = useContext(userContext);
+
 	return (
 		<>
 			<nav className="navigation">
@@ -13,9 +17,19 @@ function Navigation() {
 					<Link to="/shop" className="nav-link">
 						Shop
 					</Link>
-					<Link to="/auth" className="nav-link">
-						Sign in
-					</Link>
+					{currentUser ? (
+						<Link
+							to="/auth"
+							className="nav-link"
+							onClick={() => setCurrentUser(null)}
+						>
+							Sign out
+						</Link>
+					) : (
+						<Link to="/auth" className="nav-link">
+							Sign in
+						</Link>
+					)}
 				</div>
 			</nav>
 
