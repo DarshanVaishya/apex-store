@@ -5,6 +5,7 @@ import {
 	GoogleAuthProvider,
 	createUserWithEmailAndPassword,
 	signInWithEmailAndPassword,
+	signOut,
 } from "firebase/auth";
 import {
 	getFirestore,
@@ -77,4 +78,8 @@ export const signInUserWithEmail = async (email, password) => {
 	if (!email || !password) return;
 
 	return await signInWithEmailAndPassword(auth, email, password);
+};
+
+export const signOutUser = async () => {
+	return await signOut(auth);
 };
