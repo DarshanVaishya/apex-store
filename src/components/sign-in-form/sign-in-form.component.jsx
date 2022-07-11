@@ -1,20 +1,20 @@
 import React, { useState } from "react";
-import { useContext } from "react";
-import { userContext } from "../../contexts/user.context";
-import { signInUserWithEmail } from "../../utils/firebase/firebase.utils";
+import {
+	signInUserWithEmail,
+	signInWithGooglePopup,
+} from "../../utils/firebase/firebase.utils";
 import Button from "../button/button.component";
 import DividerText from "../divider-text/divider-text.component";
 import FormInput from "../form-input/form-input.component";
 import GoogleButton from "../google-button/google-button.component";
 
-function SignInForm({ handleGoogle }) {
+function SignInForm() {
 	const defaultFormFields = {
 		email: "",
 		password: "",
 	};
 	const [formFields, setFormFields] = useState(defaultFormFields);
 	const { email, password } = formFields;
-	const { setCurrentUser } = useContext(userContext);
 
 	const resetFormFields = () => {
 		setFormFields(defaultFormFields);
@@ -28,12 +28,15 @@ function SignInForm({ handleGoogle }) {
 		}));
 	};
 
+	const handleGoogleSignIn = async () => {
+		await signInWithGooglePopup();
+	};
+
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
 		try {
-			const { user } = await signInUserWithEmail(email, password);
-			setCurrentUser(user);
+			await signInUserWithEmail(email, password);
 			resetFormFields();
 		} catch (err) {
 			switch (err.code) {
@@ -52,7 +55,9 @@ function SignInForm({ handleGoogle }) {
 	return (
 		<section className="form-container">
 			<h2>I already have an account</h2>
-			<GoogleButton onClick={handleGoogle}>Sign in with Google</GoogleButton>
+			<GoogleButton onClick={handleGoogleSignIn}>
+				Sign in with Google
+			</GoogleButton>
 			<DividerText>OR</DividerText>
 
 			<p>Sign in with your email and password</p>
