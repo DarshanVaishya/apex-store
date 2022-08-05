@@ -3,14 +3,7 @@ import Authentication from "./routes/authentication/authentication.component";
 import Error404 from "./routes/Error404/Error404.component";
 import Home from "./routes/home/home.component";
 import Navigation from "./routes/navigation/navigation.component";
-
-function Shop() {
-	return (
-		<div>
-			<h1>SHOP PAGE</h1>
-		</div>
-	);
-}
+import Shop from "./routes/shop/shop.component";
 
 function App() {
 	return (

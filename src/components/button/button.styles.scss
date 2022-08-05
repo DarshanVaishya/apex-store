@@ -10,10 +10,11 @@
 	text-transform: uppercase;
 	font-family: "Open Sans Condensed";
 	font-weight: bolder;
-	border: none;
+	border: 1px solid rgba(0, 0, 0, 0);
 	cursor: pointer;
 	display: flex;
 	justify-content: center;
+	transition: all 0.2s ease;
 
 	&:hover {
 		background-color: white;
@@ -57,7 +58,7 @@
 		&:hover {
 			background-color: black;
 			color: white;
-			border: none;
+			border: 1px solid rgba(0, 0, 0, 0);
 		}
 	}
 }
