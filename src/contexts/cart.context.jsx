@@ -1,14 +1,12 @@
 import { useState, createContext } from "react";
 
 const addCartItem = (cartItems, product) => {
-	let newItems = cartItems.slice();
+	const newItems = cartItems.slice();
 	const idx = newItems.findIndex((item) => item.id === product.id);
 
-	if (idx !== -1) {
-		newItems[idx].quantity++;
-	} else {
-		newItems = newItems.concat({ ...product, quantity: 1 });
-	}
+	idx !== -1
+		? newItems[idx].quantity++
+		: newItems.push({ ...product, quantity: 1 });
 
 	return newItems;
 };
