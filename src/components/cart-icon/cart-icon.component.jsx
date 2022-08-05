@@ -10,7 +10,7 @@ function CartIcon() {
 	return (
 		<div className="cart-icon-container" onClick={handleClick}>
 			<Icon className="shopping-icon" />
-			<span className="shopping-count">10</span>
+			<span className="shopping-count">0</span>
 		</div>
 	);
 }
