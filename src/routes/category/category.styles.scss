@@ -1,0 +1,22 @@
+.category-route-container {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	column-gap: 10px;
+	row-gap: 50px;
+	max-width: 1400px;
+	margin: 10px auto;
+
+	& div {
+		margin-bottom: 20px;
+	}
+}
+
+.category-route-title {
+	max-width: 1400px;
+	font-size: 46px;
+	margin: 10px auto 30px;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
