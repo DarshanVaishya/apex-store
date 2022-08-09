@@ -1,9 +1,8 @@
-import { useEffect } from "react";
-import { useRef } from "react";
-import { useState } from "react";
-import { useContext } from "react";
+import { LoadBundleTask } from "firebase/firestore";
+import { useEffect, useContext, useState, useRef } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Button from "../../components/button/button.component";
+import Loader from "../../components/loader/loader.component";
 import ProductCard from "../../components/product-card/product-card.component";
 import { categoriesContext } from "../../contexts/categories.context";
 import Error404 from "../Error404/Error404.component";
@@ -26,7 +25,7 @@ function Category() {
 	}, [category, categoriesMap]);
 
 	if (!correctCategory.current) return <Error404 />;
-	if (products.length === 0) return <h1>Loading...</h1>;
+	if (products.length === 0) return <Loader />;
 	return (
 		<div className="padding-container">
 			<h2 className={styles.header}>
