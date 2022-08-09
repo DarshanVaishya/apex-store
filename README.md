@@ -31,15 +31,19 @@ Live preview: [Link](https://apex.darshanvaishya.xyz/)
 - Firebase
 - Firestore
 - Google authentication
+- CSS Modules
 
 ## Challenges faced
 
 Routing
+firebase
+css modules
 
 ## Learning outcomes
 
 React
 Routing
+css modules
 
 ## Screenshots
 
