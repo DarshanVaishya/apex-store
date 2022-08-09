@@ -10,7 +10,6 @@ function CategoriesPreview() {
 	if (categories.length === 0) return <Loader />;
 	return (
 		<>
-			<Loader />
 			{categories.map((title) => (
 				<CategoryPreview
 					key={title}
