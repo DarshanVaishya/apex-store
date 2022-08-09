@@ -13,18 +13,18 @@
 		justify-content: flex-start;
 	}
 
-	.nav-logo {
+	.logo {
 		width: 40px;
 	}
 
-	.nav-links-container {
+	.links-container {
 		width: 50%;
 		display: flex;
 		align-items: center;
 		justify-content: flex-end;
 		text-transform: uppercase;
 
-		.nav-link {
+		.link {
 			padding: 10px 15px;
 			cursor: pointer;
 			text-decoration: none;
