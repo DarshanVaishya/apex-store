@@ -19,6 +19,7 @@ function Category() {
 		setProducts(categoriesMap[category]);
 	}, [category, categoriesMap]);
 
+	if (!products) return;
 	return (
 		<div className="padding-container">
 			<h2 className={styles.header}>
