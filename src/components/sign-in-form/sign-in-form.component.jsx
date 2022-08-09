@@ -8,6 +8,8 @@ import DividerText from "../divider-text/divider-text.component";
 import FormInput from "../form-input/form-input.component";
 import GoogleButton from "../google-button/google-button.component";
 
+import styles from "../sign-up-form/sign-up-form.module.scss";
+
 function SignInForm() {
 	const defaultFormFields = {
 		email: "",
@@ -53,7 +55,7 @@ function SignInForm() {
 	};
 
 	return (
-		<section className="form-container">
+		<section className={styles.form}>
 			<h2>I already have an account</h2>
 			<GoogleButton onClick={handleGoogleSignIn}>
 				Sign in with Google

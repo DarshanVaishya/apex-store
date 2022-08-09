@@ -1,9 +1,9 @@
 import React from "react";
-import "./divider-text.styles.scss";
+import styles from "./divider-text.module.scss";
 
 function DividerText({ children, ...otherProps }) {
 	return (
-		<p className="divider-text" {...otherProps}>
+		<p className={styles.text} {...otherProps}>
 			{children}
 		</p>
 	);

@@ -1,4 +1,4 @@
-.category-route-container {
+.container {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	column-gap: 10px;
@@ -11,7 +11,7 @@
 	}
 }
 
-.category-route-header {
+.header {
 	max-width: 1400px;
 	font-size: 46px;
 	margin: 10px auto 30px;

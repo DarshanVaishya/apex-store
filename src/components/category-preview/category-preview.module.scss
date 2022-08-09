@@ -1,14 +1,14 @@
-.category-preview-container {
+.container {
 	display: flex;
 	flex-direction: column;
 	max-width: 1400px;
 	margin: 10px auto;
 
-	&:first-of-type .category-preview-title {
+	&:first-of-type .title {
 		margin-top: 0;
 	}
 
-	.category-preview-title {
+	.title {
 		display: block;
 		font-size: 33px;
 		margin: 30px 0 15px;
@@ -19,13 +19,13 @@
 		}
 	}
 
-	.category-preview-products {
+	.products {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		column-gap: 20px;
 	}
 
-	.category-preview-link {
+	.link {
 		&:link,
 		&:visited {
 			color: black;

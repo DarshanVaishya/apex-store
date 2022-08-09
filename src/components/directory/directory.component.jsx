@@ -1,9 +1,9 @@
 import DirectoryItem from "../directory-item/directory-item.component";
-import "./directory.styles.scss";
+import styles from "./directory.module.scss";
 
 function Directory({ categories }) {
 	return (
-		<div className="directory-container">
+		<div className={styles.container}>
 			{categories.map((item) => (
 				<DirectoryItem key={item.id} category={item} />
 			))}
