@@ -7,7 +7,8 @@ import {
 } from "../../utils/firebase/firebase.utils";
 import Button from "../button/button.component";
 import FormInput from "../form-input/form-input.component";
-import "./sign-up.-form.styles.scss";
+
+import styles from "./sign-up-form.module.scss";
 
 function SignUpForm() {
 	const defaultFormFields = {
@@ -57,7 +58,7 @@ function SignUpForm() {
 	};
 
 	return (
-		<section className="form-container">
+		<section className={styles.form}>
 			<h2>Don't have an account?</h2>
 			<p>Sign up with your email and password</p>
 			<form onSubmit={handleSubmit}>

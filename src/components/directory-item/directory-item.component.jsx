@@ -1,5 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import "./directory-item.component.scss";
+import styles from "./directory-item.module.scss";
+
+import directoryStyles from "../directory/directory.module.scss";
+import classes from "../../utils/mergeClasses";
 
 function DirectoryItem({ category }) {
 	const { title, imageUrl } = category;
@@ -7,15 +10,14 @@ function DirectoryItem({ category }) {
 	const clickHandler = () => navigate(`/shop/${title}`);
 
 	return (
-		<div className="directory-item-container" onClick={clickHandler}>
-			<img
-				className="directory-item-img"
-				src={imageUrl}
-				alt={`Category of ${title}`}
-			/>
-			<div className="directory-item-body">
+		<div
+			className={classes(styles.container, directoryStyles["item-container"])}
+			onClick={clickHandler}
+		>
+			<img className={styles.img} src={imageUrl} alt={`Category of ${title}`} />
+			<div className={styles.body}>
 				<h2>{title}</h2>
-				<p className="cta">Shop now</p>
+				<p className={styles.cta}>Shop now</p>
 			</div>
 		</div>
 	);
