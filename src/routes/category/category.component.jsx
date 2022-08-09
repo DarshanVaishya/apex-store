@@ -20,7 +20,7 @@ function Category() {
 
 	return (
 		<div className="padding-container">
-			<h2 className="category-route-title">
+			<h2 className="category-route-header">
 				<span>{category.toUpperCase()}</span>
 				<Button onClick={clickHandler}>Back to shop</Button>
 			</h2>

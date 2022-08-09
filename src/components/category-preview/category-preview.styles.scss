@@ -24,4 +24,16 @@
 		grid-template-columns: repeat(4, 1fr);
 		column-gap: 20px;
 	}
+
+	.category-preview-link {
+		&:link,
+		&:visited {
+			color: black;
+		}
+
+		&:hover,
+		&:active {
+			text-decoration: none;
+		}
+	}
 }
