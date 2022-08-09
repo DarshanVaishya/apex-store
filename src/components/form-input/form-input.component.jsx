@@ -1,14 +1,15 @@
 import React from "react";
-import "./form-input.styles.scss";
+import classes from "../../utils/mergeClasses";
+import styles from "./form-input.module.scss";
 
 function FormInput({ label, id, ...otherProps }) {
-	const shrink = otherProps.value.length ? "shrink" : "";
+	const shrink = otherProps.value.length ? styles.shrink : "";
 
 	return (
-		<div className="forminput-group">
-			<input className="form-input" id={id} {...otherProps} required />
+		<div className={styles.group}>
+			<input className={styles.input} id={id} {...otherProps} required />
 			{label && (
-				<label className={`${shrink} form-input-label`} htmlFor={id}>
+				<label className={classes(shrink, styles.label)} htmlFor={id}>
 					{label}
 				</label>
 			)}

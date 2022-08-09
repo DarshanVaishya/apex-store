@@ -5,7 +5,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import Button from "../../components/button/button.component";
 import ProductCard from "../../components/product-card/product-card.component";
 import { categoriesContext } from "../../contexts/categories.context";
-import "./category.styles.scss";
+
+import styles from "./category.module.scss";
 
 function Category() {
 	const { category } = useParams();
@@ -20,11 +21,11 @@ function Category() {
 
 	return (
 		<div className="padding-container">
-			<h2 className="category-route-header">
+			<h2 className={styles.header}>
 				<span>{category.toUpperCase()}</span>
 				<Button onClick={clickHandler}>Back to shop</Button>
 			</h2>
-			<div className="category-route-container">
+			<div className={styles.container}>
 				{products.map((product) => (
 					<ProductCard key={product.id} product={product} />
 				))}
